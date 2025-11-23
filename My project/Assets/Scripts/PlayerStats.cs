@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,6 +16,8 @@ public class PlayerStats : MonoBehaviour
     public float flickerDuration =0.1f;
 
     private SpriteRenderer sr;
+
+    public TextMeshProUGUI scoreUI;
 
     public bool isImmune = false;
     private float immunityTime =0f;
@@ -33,7 +38,9 @@ public class PlayerStats : MonoBehaviour
                 isImmune = false;
                 sr.enabled = true;
             }
+        
         }
+        scoreUI.text =" " + score;
     }
 
     public void TakeDamage(int damage){
